@@ -12,6 +12,9 @@ namespace CHTLProject
 {
     public partial class BillOut : Form
     {
+        public string productid;
+
+        public int quantity;
         
         public BillOut()
         {
@@ -22,6 +25,7 @@ namespace CHTLProject
         {
             SearchProduct searchProduct = new SearchProduct(this); 
             searchProduct.ShowDialog();
+
         }
     }
 }

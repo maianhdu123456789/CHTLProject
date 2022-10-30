@@ -26,7 +26,7 @@ namespace CHTLProject
             BO = billOut;
             LoadProduct();
             //Console.InputEncoding = System.Text.Encoding.UTF8;
-            //Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
         }
 
         void LoadProduct()
@@ -39,52 +39,80 @@ namespace CHTLProject
             while (Dr.Read())
             {
                 i++;
-                dgvSearchProduct.Rows.Add(i, Dr["ProductId"].ToString(), Dr["ProductName"], Dr["Price"], Dr["Category"], Dr["Brand"].ToString());
+                dgvSearchProduct.Rows.Add(i, Dr["ProductId"].ToString(), Dr["ProductName"].ToString()) ;
             }
             Dr.Close();
+            for ( int j=0; j < (dgvSearchProduct.Rows.Count)-1; j++)
+            {
+                dgvSearchProduct.Rows[j].Cells[3].Value = 1;
+            }
             cn.Close();// ngat ket noi
         }
+
+
+        void LoadProductSearch()
+        {
+            dgvSearchProduct.Rows.Clear();
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM Product WHERE CONCAT (productID,productName) LIKE '%" + txtSearch.Text + "%' ", cn);
+            Dr = cm.ExecuteReader();
+            int i = 0;
+            while (Dr.Read())
+            {
+                i++;
+                dgvSearchProduct.Rows.Add(i, Dr["ProductId"].ToString(), Dr["ProductName"].ToString());
+            }
+            Dr.Close();
+            for (int j = 0; j < (dgvSearchProduct.Rows.Count) - 1; j++)
+            {
+                dgvSearchProduct.Rows[j].Cells[3].Value = 1;
+            }
+            cn.Close();// ngat ket noi
+        }
+
         private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // for select product
-            string colName= dgvSearchProduct.Columns[e.ColumnIndex].Name;
-            if (colName== "Select")
-            {
-
-            }
-
-
-            /*
-
-            string colName = dgvCategory.Columns[e.ColumnIndex].Name;
-            if (colName == "Delete")
-            {
-                if (MessageBox.Show("Are you want to delete this record ?", "Edit record", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    cn.Open();
-                    // cm = new SqlCommand("DELETE FROM Category WHERE categoryId LIKE '" +
-                    //   dgvCategory[1, e.RowIndex].Value.ToString() + "'", cn);
-                    // cot 1 : id; hang
-                    cm = new SqlCommand("EXEC pr_XoaLoaiSP @categoryId", cn);
-                    cm.Parameters.AddWithValue("@categoryId", dgvCategory[1, e.RowIndex].Value.ToString());
-                    cm.ExecuteNonQuery();
-                    cn.Close();
-                    MessageBox.Show("Category is been successfully deleted!!", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            */
+            
         }
 
         private void txtSearch_Click(object sender, EventArgs e)
         {
- 
+            txtSearch.Clear();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadProductSearch();
+        }
+
+        private void txtSearch_MouseEnter(object sender, EventArgs e)
+        {
+        }
+        
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search category here")
+            {
+                txtSearch.Clear();  
+                txtSearch.Text = "";
+                txtSearch.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Search category here";
+                txtSearch.ForeColor = Color.MediumPurple;
+
+            }
         }
     }
 }
