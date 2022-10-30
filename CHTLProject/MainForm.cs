@@ -127,8 +127,7 @@ namespace CHTLProject
         {
             showSubmenu(panelSubTransaction);
         }
-        tải này về trước
-            ok
+
         private void btnBillOut_Click(object sender, EventArgs e)
         {
             openChildForm(new BillOut());
@@ -185,6 +184,11 @@ namespace CHTLProject
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             openChildForm(new Customer());
+        }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

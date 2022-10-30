@@ -141,13 +141,13 @@
             this.panel2.Location = new System.Drawing.Point(3, 456);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(698, 178);
+            this.panel2.Size = new System.Drawing.Size(764, 178);
             this.panel2.TabIndex = 6;
             // 
             // txtQuantity
             // 
             this.txtQuantity.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtQuantity.Location = new System.Drawing.Point(285, 124);
+            this.txtQuantity.Location = new System.Drawing.Point(242, 118);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(234, 35);
             this.txtQuantity.TabIndex = 17;
@@ -157,7 +157,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(155, 127);
+            this.label8.Location = new System.Drawing.Point(112, 121);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 29);
             this.label8.TabIndex = 16;
@@ -166,7 +166,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(546, 73);
+            this.button1.Location = new System.Drawing.Point(539, 59);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 51);
             this.button1.TabIndex = 10;
@@ -176,7 +176,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(640, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(709, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(52, 51);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -199,7 +199,7 @@
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.textBox2.Location = new System.Drawing.Point(285, 81);
+            this.textBox2.Location = new System.Drawing.Point(242, 75);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(234, 35);
             this.textBox2.TabIndex = 7;
@@ -209,7 +209,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(45, 84);
+            this.label6.Location = new System.Drawing.Point(2, 78);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(226, 29);
             this.label6.TabIndex = 6;
@@ -218,7 +218,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.textBox1.Location = new System.Drawing.Point(285, 40);
+            this.textBox1.Location = new System.Drawing.Point(242, 34);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(234, 35);
             this.textBox1.TabIndex = 5;
@@ -228,7 +228,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(45, 48);
+            this.label5.Location = new System.Drawing.Point(2, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(234, 29);
             this.label5.TabIndex = 4;
@@ -290,7 +290,7 @@
             this.dgvCategory.RowHeadersVisible = false;
             this.dgvCategory.RowHeadersWidth = 51;
             this.dgvCategory.RowTemplate.Height = 24;
-            this.dgvCategory.Size = new System.Drawing.Size(698, 453);
+            this.dgvCategory.Size = new System.Drawing.Size(764, 453);
             this.dgvCategory.TabIndex = 5;
             // 
             // Column1
@@ -354,6 +354,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.panel3);
@@ -370,9 +371,9 @@
             this.panel1.Controls.Add(this.lblDisplayTotal);
             this.panel1.Controls.Add(this.lblTrans);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(701, 3);
+            this.panel1.Location = new System.Drawing.Point(767, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 631);
+            this.panel1.Size = new System.Drawing.Size(188, 631);
             this.panel1.TabIndex = 4;
             // 
             // panel3
@@ -387,7 +388,7 @@
             this.panel3.ForeColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(0, 451);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(254, 137);
+            this.panel3.Size = new System.Drawing.Size(188, 137);
             this.panel3.TabIndex = 12;
             // 
             // lblDiscount
@@ -470,7 +471,7 @@
             this.lblTimer.ForeColor = System.Drawing.Color.White;
             this.lblTimer.Location = new System.Drawing.Point(0, 588);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(254, 43);
+            this.lblTimer.Size = new System.Drawing.Size(188, 43);
             this.lblTimer.TabIndex = 9;
             this.lblTimer.Text = "00: 00: 00";
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -567,7 +568,7 @@
             this.lblDisplayTotal.ForeColor = System.Drawing.Color.Black;
             this.lblDisplayTotal.Location = new System.Drawing.Point(0, 0);
             this.lblDisplayTotal.Name = "lblDisplayTotal";
-            this.lblDisplayTotal.Size = new System.Drawing.Size(254, 59);
+            this.lblDisplayTotal.Size = new System.Drawing.Size(188, 59);
             this.lblDisplayTotal.TabIndex = 1;
             this.lblDisplayTotal.Text = "0.00";
             this.lblDisplayTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -749,6 +750,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(966, 679);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
@@ -759,6 +761,7 @@
             this.Text = "BillOut";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
