@@ -17,5 +17,11 @@ namespace CHTLProject
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            SearchProduct searchProduct = new SearchProduct(this); 
+            searchProduct.ShowDialog();
+        }
     }
 }

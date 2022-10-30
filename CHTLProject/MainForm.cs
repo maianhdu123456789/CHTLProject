@@ -188,7 +188,7 @@ namespace CHTLProject
 
         private void picExit_Click(object sender, EventArgs e)
         {
-           
+            Application.Exit();
         }
     }
 }
