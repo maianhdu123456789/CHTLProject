@@ -12,6 +12,7 @@ namespace CHTLProject
 {
     public partial class BillOut : Form
     {
+        
         public BillOut()
         {
             InitializeComponent();
