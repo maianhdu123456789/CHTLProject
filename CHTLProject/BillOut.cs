@@ -13,11 +13,10 @@ namespace CHTLProject
 {
     public partial class BillOut : Form
     {
-        public string productid;
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnect Dbc = new DBConnect();
-        public int quantity;
+        SqlDataReader Dr;
         string employeeid;
 
 
@@ -32,6 +31,7 @@ namespace CHTLProject
         {
             SearchProduct searchProduct = new SearchProduct(this); 
             searchProduct.ShowDialog();
+            LoadBillOut();
 
         }
         private string FindLastBillOutID()
@@ -51,6 +51,7 @@ namespace CHTLProject
         }
         private void btnNewBill_Click(object sender, EventArgs e)
         {
+            dgvBillOut.Rows.Clear();    
             cn.Open(); //mo ket noi
 
             //goi thu tuc tao Bill moi
@@ -67,6 +68,24 @@ namespace CHTLProject
         private void BillOut_Load(object sender, EventArgs e)
         {
             lblEmployeeID.Text = employeeid;
+            lblBillOutID.Text = FindLastBillOutID();
+            LoadBillOut();
+        }
+        void LoadBillOut()
+        {
+            dgvBillOut.Rows.Clear();
+            cn.Open();
+            cm = new SqlCommand("select OrderOut.productID, Product.productName, OrderOut.quantity, OrderOut.price\r\n"
+                    +"from OrderOut inner join Product on Product.productID = OrderOut.productID where OrderOut.orderID = (select max(billOutID) from BillOut)", cn);
+            Dr = cm.ExecuteReader();
+            int i = 0;
+            while (Dr.Read())
+            {
+                i++;
+                dgvBillOut.Rows.Add(i, Dr["ProductId"].ToString(), Dr["ProductName"].ToString(), Dr["Price"].ToString(), Dr["Quantity"].ToString());
+            }
+            Dr.Close();
+            cn.Close();// ngat ket noi
         }
     }
 }
