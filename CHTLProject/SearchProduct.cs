@@ -19,14 +19,13 @@ namespace CHTLProject
         DBConnect Dbc = new DBConnect();
         SqlDataReader Dr;
         BillOut BO;
+        
         public SearchProduct(BillOut billOut)
         {
             InitializeComponent();
-            cn= new SqlConnection(Dbc.myConnection());
+            cn = new SqlConnection(Dbc.myConnection());
             BO = billOut;
             LoadProduct();
-            //Console.InputEncoding = System.Text.Encoding.UTF8;
-            Console.OutputEncoding = System.Text.Encoding.Unicode;
         }
 
         void LoadProduct()
@@ -42,11 +41,8 @@ namespace CHTLProject
                 dgvSearchProduct.Rows.Add(i, Dr["ProductId"].ToString(), Dr["ProductName"].ToString()) ;
             }
             Dr.Close();
-            for ( int j=0; j < (dgvSearchProduct.Rows.Count)-1; j++)
-            {
-                dgvSearchProduct.Rows[j].Cells[3].Value = 1;
-            }
             cn.Close();// ngat ket noi
+            txtQuantity.Text = 1.ToString();
         }
 
 
@@ -63,16 +59,40 @@ namespace CHTLProject
                 dgvSearchProduct.Rows.Add(i, Dr["ProductId"].ToString(), Dr["ProductName"].ToString());
             }
             Dr.Close();
-            for (int j = 0; j < (dgvSearchProduct.Rows.Count) - 1; j++)
-            {
-                dgvSearchProduct.Rows[j].Cells[3].Value = 1;
-            }
+  
             cn.Close();// ngat ket noi
         }
 
         private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+            string colName = dgvSearchProduct.Columns[e.ColumnIndex].Name;
+            DataGridViewRow r = new DataGridViewRow();
+            r = dgvSearchProduct.Rows[e.RowIndex];
+            if (colName == "Select")
+            {
+                try
+                {
+                    cn.Open();
+
+                    cm = new SqlCommand("pr_ThemOrderOut", cn);
+                    cm.Parameters.Add(new SqlParameter("@orderid", BO.lblBillOutID.Text));
+                    cm.Parameters.Add(new SqlParameter("productID", r.Cells[1].Value.ToString()));
+                    cm.Parameters.Add(new SqlParameter("quantity", txtQuantity.Text));
+                    cm.CommandType = CommandType.StoredProcedure;
+
+                    cm.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("* An error occurred while interacting with SQL Server: " + ex);
+                }
+                finally
+                {
+                    cn.Close();
+                }
+                txtQuantity.Text = 1.ToString();
+            }
         }
 
         private void txtSearch_Click(object sender, EventArgs e)
@@ -96,7 +116,7 @@ namespace CHTLProject
         
         private void txtSearch_Enter(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "Search category here")
+            if (txtSearch.Text == "Search product here")
             {
                 txtSearch.Clear();  
                 txtSearch.Text = "";
@@ -109,10 +129,15 @@ namespace CHTLProject
         {
             if (txtSearch.Text == "")
             {
-                txtSearch.Text = "Search category here";
+                txtSearch.Text = "";
                 txtSearch.ForeColor = Color.MediumPurple;
 
             }
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
