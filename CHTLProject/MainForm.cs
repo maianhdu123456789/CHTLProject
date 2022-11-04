@@ -120,11 +120,13 @@ namespace CHTLProject
 
         private void btnSupplier_Click(object sender, EventArgs e)
         {
+            s(btnSupplier);
             openChildForm(new Supllier());
         }
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
+            s(btnTransaction);
             showSubmenu(panelSubTransaction);
         }
 
@@ -142,6 +144,7 @@ namespace CHTLProject
 
         private void btnStatistical_Click(object sender, EventArgs e)
         {
+            s(btnStatistical);
             showSubmenu(panelSubStatistical);
         }
 

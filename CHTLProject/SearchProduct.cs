@@ -32,13 +32,13 @@ namespace CHTLProject
         {
             dgvSearchProduct.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT * FROM Product ", cn);
+            cm = new SqlCommand("SELECT * FROM Inventory ", cn);
             Dr = cm.ExecuteReader();
             int i = 0;
             while (Dr.Read())
             {
                 i++;
-                dgvSearchProduct.Rows.Add(i, Dr["ProductId"].ToString(), Dr["ProductName"].ToString()) ;
+                dgvSearchProduct.Rows.Add(i, Dr["ProductId"].ToString(), Dr["ProductName"].ToString(), Dr["quantity"].ToString());
             }
             Dr.Close();
             cn.Close();// ngat ket noi
