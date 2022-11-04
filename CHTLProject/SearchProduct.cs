@@ -27,7 +27,7 @@ namespace CHTLProject
             BO = billOut;
             LoadProduct();
         }
-
+        //ham load du lieu tu bang Product len datagirdview
         void LoadProduct()
         {
             dgvSearchProduct.Rows.Clear();
@@ -85,7 +85,7 @@ namespace CHTLProject
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("* An error occurred while interacting with SQL Server: " + ex);
+                    MessageBox.Show(ex.Message);
                 }
                 finally
                 {

@@ -130,7 +130,7 @@ namespace CHTLProject
 
         private void btnBillOut_Click(object sender, EventArgs e)
         {
-            openChildForm(new BillOut("NV0001"));
+            openChildForm(new BillOut("NV0002"));
             hideSubmenu();
         }
 

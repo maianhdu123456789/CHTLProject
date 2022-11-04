@@ -40,6 +40,8 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblBillOut = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +76,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(386, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 39);
+            this.label1.Size = new System.Drawing.Size(121, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Edit Oder";
             // 
@@ -89,6 +91,7 @@
             this.btnUpdate.TabIndex = 13;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCancel
             // 
@@ -101,13 +104,14 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblProductId
             // 
             this.lblProductId.AutoSize = true;
-            this.lblProductId.Location = new System.Drawing.Point(22, 221);
+            this.lblProductId.Location = new System.Drawing.Point(137, 227);
             this.lblProductId.Name = "lblProductId";
-            this.lblProductId.Size = new System.Drawing.Size(109, 29);
+            this.lblProductId.Size = new System.Drawing.Size(86, 23);
             this.lblProductId.TabIndex = 10;
             this.lblProductId.Text = "ProductId";
             // 
@@ -116,7 +120,7 @@
             this.txtProductName.Enabled = false;
             this.txtProductName.Location = new System.Drawing.Point(242, 77);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(532, 35);
+            this.txtProductName.Size = new System.Drawing.Size(532, 30);
             this.txtProductName.TabIndex = 9;
             // 
             // label2
@@ -124,7 +128,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(21, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 29);
+            this.label2.Size = new System.Drawing.Size(118, 23);
             this.label2.TabIndex = 8;
             this.label2.Text = "Product Name";
             // 
@@ -132,7 +136,7 @@
             // 
             this.txtQuantity.Location = new System.Drawing.Point(242, 128);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(532, 35);
+            this.txtQuantity.Size = new System.Drawing.Size(532, 30);
             this.txtQuantity.TabIndex = 15;
             // 
             // label3
@@ -140,24 +144,44 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(21, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 29);
+            this.label3.Size = new System.Drawing.Size(78, 23);
             this.label3.TabIndex = 14;
             this.label3.Text = "Quantity";
             // 
             // lblBillOut
             // 
             this.lblBillOut.AutoSize = true;
-            this.lblBillOut.Location = new System.Drawing.Point(22, 192);
+            this.lblBillOut.Location = new System.Drawing.Point(137, 192);
             this.lblBillOut.Name = "lblBillOut";
-            this.lblBillOut.Size = new System.Drawing.Size(100, 29);
+            this.lblBillOut.Size = new System.Drawing.Size(79, 23);
             this.lblBillOut.TabIndex = 16;
             this.lblBillOut.Text = "BillOutId";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 192);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 23);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "BillOutId";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 227);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 23);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "BillOutId";
+            // 
             // EditOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 269);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblBillOut);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.label3);
@@ -187,11 +211,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label lblProductId;
-        private System.Windows.Forms.TextBox txtProductName;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblBillOut;
+        public System.Windows.Forms.Label lblProductId;
+        public System.Windows.Forms.Label lblBillOut;
+        public System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label5;
     }
 }
