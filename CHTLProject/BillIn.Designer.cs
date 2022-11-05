@@ -42,20 +42,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblSalesTotal = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblEmployeeID = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbSupplierName = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Date = new System.Windows.Forms.DateTimePicker();
-            this.lblBillInID = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.dgvBillIn = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvRecordBillIn = new System.Windows.Forms.DataGridView();
@@ -70,22 +58,34 @@
             this.btnShow = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblSalesTotal = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblEmployeeID = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbSupplierName = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Date = new System.Windows.Forms.DateTimePicker();
+            this.lblBillInID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Del = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillIn)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecordBillIn)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -96,40 +96,43 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(986, 625);
+            this.tabControl1.Size = new System.Drawing.Size(849, 625);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.DimGray;
             this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.dgvBillIn);
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(978, 583);
+            this.tabPage1.Size = new System.Drawing.Size(841, 583);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Bill In";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.BackColor = System.Drawing.Color.Brown;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.txtQuantity);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(3, 489);
+            this.panel2.Location = new System.Drawing.Point(3, 465);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(972, 91);
+            this.panel2.Size = new System.Drawing.Size(835, 115);
             this.panel2.TabIndex = 5;
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label6.BackColor = System.Drawing.Color.Teal;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,187 +149,53 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSearch.Location = new System.Drawing.Point(634, 18);
+            this.btnSearch.BackColor = System.Drawing.Color.Teal;
+            this.btnSearch.Location = new System.Drawing.Point(300, 1);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(184, 51);
+            this.btnSearch.Size = new System.Drawing.Size(181, 51);
             this.btnSearch.TabIndex = 13;
             this.btnSearch.Text = "Add Product";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // txtQuantity
             // 
-            this.txtQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.txtQuantity.Location = new System.Drawing.Point(351, 34);
+            this.txtQuantity.BackColor = System.Drawing.Color.White;
+            this.txtQuantity.Location = new System.Drawing.Point(300, 69);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(252, 35);
+            this.txtQuantity.Size = new System.Drawing.Size(450, 35);
             this.txtQuantity.TabIndex = 15;
             this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(824, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 51);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "NewBill";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.Teal;
+            this.btnUpdate.Location = new System.Drawing.Point(487, 0);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(159, 51);
+            this.btnUpdate.TabIndex = 11;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(239, 40);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(190, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 29);
             this.label4.TabIndex = 14;
             this.label4.Text = "Quantity:";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.lblEmployeeID);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.cbSupplierName);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.Date);
-            this.panel1.Controls.Add(this.lblBillInID);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(972, 148);
-            this.panel1.TabIndex = 4;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel3.Controls.Add(this.lblSalesTotal);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(604, 50);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(268, 75);
-            this.panel3.TabIndex = 13;
-            // 
-            // lblSalesTotal
-            // 
-            this.lblSalesTotal.AutoSize = true;
-            this.lblSalesTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblSalesTotal.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalesTotal.ForeColor = System.Drawing.Color.Black;
-            this.lblSalesTotal.Location = new System.Drawing.Point(149, 19);
-            this.lblSalesTotal.Name = "lblSalesTotal";
-            this.lblSalesTotal.Size = new System.Drawing.Size(85, 29);
-            this.lblSalesTotal.TabIndex = 14;
-            this.lblSalesTotal.Text = "000000";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(3, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 29);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Buy total:";
-            // 
-            // lblEmployeeID
-            // 
-            this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmployeeID.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeID.ForeColor = System.Drawing.Color.White;
-            this.lblEmployeeID.Location = new System.Drawing.Point(794, 10);
-            this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(81, 29);
-            this.lblEmployeeID.TabIndex = 12;
-            this.lblEmployeeID.Text = "Ma NV";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(598, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 29);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Employee Name:";
-            // 
-            // cbSupplierName
-            // 
-            this.cbSupplierName.FormattingEnabled = true;
-            this.cbSupplierName.Location = new System.Drawing.Point(169, 99);
-            this.cbSupplierName.Name = "cbSupplierName";
-            this.cbSupplierName.Size = new System.Drawing.Size(308, 37);
-            this.cbSupplierName.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(5, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 29);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Supplier Name: ";
-            // 
-            // Date
-            // 
-            this.Date.Location = new System.Drawing.Point(65, 50);
-            this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(412, 35);
-            this.Date.TabIndex = 8;
-            // 
-            // lblBillInID
-            // 
-            this.lblBillInID.AutoSize = true;
-            this.lblBillInID.BackColor = System.Drawing.Color.Transparent;
-            this.lblBillInID.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBillInID.ForeColor = System.Drawing.Color.White;
-            this.lblBillInID.Location = new System.Drawing.Point(190, 10);
-            this.lblBillInID.Name = "lblBillInID";
-            this.lblBillInID.Size = new System.Drawing.Size(85, 29);
-            this.lblBillInID.TabIndex = 7;
-            this.lblBillInID.Text = "000000";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 29);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Date: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(193, 29);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "New Transaction :";
-            // 
             // dgvBillIn
             // 
-            this.dgvBillIn.BackgroundColor = System.Drawing.Color.Gray;
+            this.dgvBillIn.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvBillIn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBillIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -336,7 +205,6 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column5,
             this.Column4,
             this.Edit,
             this.Del});
@@ -344,14 +212,15 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBillIn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBillIn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBillIn.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvBillIn.EnableHeadersVisualStyles = false;
             this.dgvBillIn.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvBillIn.Location = new System.Drawing.Point(3, 145);
+            this.dgvBillIn.Location = new System.Drawing.Point(3, 131);
             this.dgvBillIn.Name = "dgvBillIn";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -364,7 +233,7 @@
             this.dgvBillIn.RowHeadersVisible = false;
             this.dgvBillIn.RowHeadersWidth = 51;
             this.dgvBillIn.RowTemplate.Height = 24;
-            this.dgvBillIn.Size = new System.Drawing.Size(975, 344);
+            this.dgvBillIn.Size = new System.Drawing.Size(835, 449);
             this.dgvBillIn.TabIndex = 3;
             // 
             // tabPage2
@@ -530,6 +399,154 @@
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Teal;
+            this.button2.Location = new System.Drawing.Point(652, 1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(159, 51);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "NewBill";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.lblEmployeeID);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.cbSupplierName);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.Date);
+            this.panel1.Controls.Add(this.lblBillInID);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(835, 128);
+            this.panel1.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel3.Controls.Add(this.lblSalesTotal);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Location = new System.Drawing.Point(519, 42);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(268, 75);
+            this.panel3.TabIndex = 13;
+            // 
+            // lblSalesTotal
+            // 
+            this.lblSalesTotal.AutoSize = true;
+            this.lblSalesTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblSalesTotal.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalesTotal.ForeColor = System.Drawing.Color.Black;
+            this.lblSalesTotal.Location = new System.Drawing.Point(149, 19);
+            this.lblSalesTotal.Name = "lblSalesTotal";
+            this.lblSalesTotal.Size = new System.Drawing.Size(85, 29);
+            this.lblSalesTotal.TabIndex = 14;
+            this.lblSalesTotal.Text = "000000";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(17, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 29);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Buy total:";
+            // 
+            // lblEmployeeID
+            // 
+            this.lblEmployeeID.AutoSize = true;
+            this.lblEmployeeID.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeID.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeID.ForeColor = System.Drawing.Color.Black;
+            this.lblEmployeeID.Location = new System.Drawing.Point(706, 10);
+            this.lblEmployeeID.Name = "lblEmployeeID";
+            this.lblEmployeeID.Size = new System.Drawing.Size(81, 29);
+            this.lblEmployeeID.TabIndex = 12;
+            this.lblEmployeeID.Text = "Ma NV";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(527, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(173, 29);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Employee Name:";
+            // 
+            // cbSupplierName
+            // 
+            this.cbSupplierName.FormattingEnabled = true;
+            this.cbSupplierName.Location = new System.Drawing.Point(169, 88);
+            this.cbSupplierName.Name = "cbSupplierName";
+            this.cbSupplierName.Size = new System.Drawing.Size(262, 37);
+            this.cbSupplierName.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(0, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 29);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Supplier Name: ";
+            // 
+            // Date
+            // 
+            this.Date.Location = new System.Drawing.Point(65, 50);
+            this.Date.Name = "Date";
+            this.Date.Size = new System.Drawing.Size(366, 35);
+            this.Date.TabIndex = 8;
+            // 
+            // lblBillInID
+            // 
+            this.lblBillInID.AutoSize = true;
+            this.lblBillInID.BackColor = System.Drawing.Color.Transparent;
+            this.lblBillInID.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBillInID.ForeColor = System.Drawing.Color.Black;
+            this.lblBillInID.Location = new System.Drawing.Point(190, 10);
+            this.lblBillInID.Name = "lblBillInID";
+            this.lblBillInID.Size = new System.Drawing.Size(85, 29);
+            this.lblBillInID.TabIndex = 7;
+            this.lblBillInID.Text = "000000";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(3, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 29);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Date: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(3, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(193, 29);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "New Transaction :";
+            // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -553,18 +570,10 @@
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column5.HeaderText = "Price";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 88;
-            // 
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.HeaderText = "Quantity";
             this.Column4.MinimumWidth = 6;
@@ -593,7 +602,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 625);
+            this.ClientSize = new System.Drawing.Size(849, 625);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -603,17 +612,18 @@
             this.Load += new System.EventHandler(this.BillIn_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillIn)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecordBillIn)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -623,23 +633,11 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvBillIn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label lblEmployeeID;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbSupplierName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker Date;
-        private System.Windows.Forms.Label lblBillInID;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblSalesTotal;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvRecordBillIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
@@ -652,12 +650,24 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnShow;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblSalesTotal;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblEmployeeID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbSupplierName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker Date;
+        private System.Windows.Forms.Label lblBillInID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Del;

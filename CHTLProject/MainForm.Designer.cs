@@ -94,7 +94,7 @@
             this.panelSlide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSlide.Location = new System.Drawing.Point(0, 0);
             this.panelSlide.Name = "panelSlide";
-            this.panelSlide.Size = new System.Drawing.Size(224, 807);
+            this.panelSlide.Size = new System.Drawing.Size(224, 648);
             this.panelSlide.TabIndex = 0;
             // 
             // btnLogout
@@ -104,6 +104,8 @@
             this.btnLogout.FlatAppearance.BorderSize = 3;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogout.Location = new System.Drawing.Point(0, 1017);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(224, 53);
@@ -119,6 +121,8 @@
             this.btnCustomer.FlatAppearance.BorderSize = 3;
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomer.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.Image")));
+            this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCustomer.Location = new System.Drawing.Point(0, 964);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(224, 53);
@@ -179,6 +183,8 @@
             this.btnSetting.FlatAppearance.BorderSize = 3;
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetting.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
+            this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSetting.Location = new System.Drawing.Point(0, 805);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(224, 53);
@@ -239,6 +245,8 @@
             this.btnStatistical.FlatAppearance.BorderSize = 3;
             this.btnStatistical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStatistical.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistical.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistical.Image")));
+            this.btnStatistical.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStatistical.Location = new System.Drawing.Point(0, 646);
             this.btnStatistical.Name = "btnStatistical";
             this.btnStatistical.Size = new System.Drawing.Size(224, 53);
@@ -265,6 +273,7 @@
             this.btnBillIn.FlatAppearance.BorderSize = 3;
             this.btnBillIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBillIn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBillIn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBillIn.Location = new System.Drawing.Point(0, 53);
             this.btnBillIn.Name = "btnBillIn";
             this.btnBillIn.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -282,6 +291,7 @@
             this.btnBillOut.FlatAppearance.BorderSize = 3;
             this.btnBillOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBillOut.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBillOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBillOut.Location = new System.Drawing.Point(0, 0);
             this.btnBillOut.Name = "btnBillOut";
             this.btnBillOut.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -299,6 +309,8 @@
             this.btnTransaction.FlatAppearance.BorderSize = 3;
             this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransaction.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransaction.Image = ((System.Drawing.Image)(resources.GetObject("btnTransaction.Image")));
+            this.btnTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTransaction.Location = new System.Drawing.Point(0, 487);
             this.btnTransaction.Name = "btnTransaction";
             this.btnTransaction.Size = new System.Drawing.Size(224, 53);
@@ -315,6 +327,8 @@
             this.btnSupplier.FlatAppearance.BorderSize = 3;
             this.btnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupplier.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupplier.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplier.Image")));
+            this.btnSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSupplier.Location = new System.Drawing.Point(0, 434);
             this.btnSupplier.Name = "btnSupplier";
             this.btnSupplier.Size = new System.Drawing.Size(224, 53);
@@ -341,6 +355,7 @@
             this.btnCategory.FlatAppearance.BorderSize = 3;
             this.btnCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategory.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCategory.Location = new System.Drawing.Point(0, 53);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -358,6 +373,7 @@
             this.btnProductList.FlatAppearance.BorderSize = 3;
             this.btnProductList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductList.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProductList.Location = new System.Drawing.Point(0, 0);
             this.btnProductList.Name = "btnProductList";
             this.btnProductList.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -375,6 +391,8 @@
             this.btnProduct.FlatAppearance.BorderSize = 3;
             this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProduct.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.Image")));
+            this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProduct.Location = new System.Drawing.Point(0, 275);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(224, 53);
@@ -391,6 +409,8 @@
             this.btnDashboard.FlatAppearance.BorderSize = 3;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDashboard.Location = new System.Drawing.Point(0, 222);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(224, 53);
@@ -454,7 +474,7 @@
             // 
             this.picUser.Location = new System.Drawing.Point(42, 12);
             this.picUser.Name = "picUser";
-            this.picUser.Size = new System.Drawing.Size(151, 113);
+            this.picUser.Size = new System.Drawing.Size(135, 113);
             this.picUser.TabIndex = 0;
             this.picUser.TabStop = false;
             // 
@@ -465,7 +485,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(224, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 807);
+            this.panel2.Size = new System.Drawing.Size(10, 648);
             this.panel2.TabIndex = 1;
             // 
             // panelS
@@ -530,7 +550,7 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(234, 107);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(881, 700);
+            this.panelMain.Size = new System.Drawing.Size(881, 541);
             this.panelMain.TabIndex = 3;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -539,7 +559,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1115, 807);
+            this.ClientSize = new System.Drawing.Size(1115, 648);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panel2);
