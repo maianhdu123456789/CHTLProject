@@ -12,6 +12,7 @@ namespace CHTLProject
 {
     public partial class ModuleCustomer : Form
     {
+
         public ModuleCustomer()
         {
             InitializeComponent();

@@ -17,20 +17,6 @@ namespace CHTLProject
             InitializeComponent();
         }
 
-        private void lblTitleLogin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserName_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void picClose_Click(object sender, EventArgs e)
         {

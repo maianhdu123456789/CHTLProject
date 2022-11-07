@@ -68,7 +68,7 @@
             this.lblTitleLogin.Size = new System.Drawing.Size(376, 55);
             this.lblTitleLogin.TabIndex = 0;
             this.lblTitleLogin.Text = "Convenience Store";
-            this.lblTitleLogin.Click += new System.EventHandler(this.lblTitleLogin_Click);
+
             // 
             // ptbLogin
             // 
@@ -204,7 +204,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Login";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbLogin)).EndInit();
