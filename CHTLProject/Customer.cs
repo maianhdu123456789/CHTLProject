@@ -55,5 +55,11 @@ namespace CHTLProject
         {
             LoadCustomerSearch();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ModuleCustomer ctm = new ModuleCustomer();
+            ctm.ShowDialog();
+        }
     }
 }
