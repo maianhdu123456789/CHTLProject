@@ -80,6 +80,7 @@
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Text = "Search customer here ";
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label1
             // 

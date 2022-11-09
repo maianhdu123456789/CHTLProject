@@ -29,7 +29,7 @@ namespace CHTLProject
             adapter.Fill(dt);
             return dt;
         }
-        public string GetFieldValues(string sql)
+/*        public string GetFieldValues(string sql)
         {
             cn.ConnectionString = myConnection();
             string ma = "";
@@ -44,6 +44,6 @@ namespace CHTLProject
             reader.Close();
             cn.Close();
             return ma;
-        }
+        }*/
     }
 }
