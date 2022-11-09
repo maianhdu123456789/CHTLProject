@@ -10,13 +10,13 @@ namespace CHTLProject
 {
     internal class DBConnect
     {
-        private string conn;
+        public string conn;
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
 
         public string myConnection()
         {
-            conn = @"Data Source=User;Initial Catalog=ShopApp;Integrated Security=True";
+            conn = @"Data Source=LAPTOP-IJQG44F2\SQLEXPRESS; Initial Catalog=ShopApp;Integrated Security=True";
             return conn;
 
         }
@@ -28,6 +28,22 @@ namespace CHTLProject
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             return dt;
+        }
+        public string GetFieldValues(string sql)
+        {
+            cn.ConnectionString = myConnection();
+            string ma = "";
+            cm = new SqlCommand(sql,cn);
+            cn.Open();
+            SqlDataReader reader;
+            reader = cm.ExecuteReader();
+            while (reader.Read())
+            {
+                ma = reader.GetValue(0).ToString();
+            }
+            reader.Close();
+            cn.Close();
+            return ma;
         }
     }
 }

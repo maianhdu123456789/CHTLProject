@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CHTLProject
 {
@@ -25,15 +19,21 @@ namespace CHTLProject
 
         private void Customer_Load(object sender, EventArgs e)
         {
-            cn = new SqlConnection(str);
-            cn.Open();
-            cmd = cn.CreateCommand();
-            cmd.CommandText = "select * from Customer ";
-            adapter.SelectCommand = cmd;
-            dt.Clear();
-            adapter.Fill(dt);
+            DBConnect cn = new DBConnect();
+            cn.myConnection();
+            /*            var index = dgvCategory.Rows.Add();
+                        dgvCategory.Rows[index].Cells["Column2"].Value = cn.GetFieldValues("SELECT customerId from Customer") ;
+                        dgvCategory.Rows[index].Cells["Column3"].Value = cn.GetFieldValues("SELECT customerName from Customer");
+                        dgvCategory.Rows[index].Cells["Column4"].Value = cn.GetFieldValues("SELECT customerPhone from Customer");
+                        dgvCategory.Rows[index].Cells["Column5"].Value = cn.GetFieldValues("SELECT point from Customer");*/
+            DataTable dt = new DataTable();
+            dt = cn.getTable("SELECT * from Customer");
             dgvCategory.DataSource = dt;
-            cn.Close();
+        }
+
+        private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
