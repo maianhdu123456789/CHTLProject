@@ -34,7 +34,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.dtpDayofbirth = new System.Windows.Forms.DateTimePicker();
             this.txtEAddress = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnCancell = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonSaveChangePass = new System.Windows.Forms.Button();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtReNewPass = new System.Windows.Forms.TextBox();
@@ -104,12 +104,13 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(863, 447);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabPage1.Controls.Add(this.btnCancel);
-            this.tabPage1.Controls.Add(this.btnSave);
+            this.tabPage1.Controls.Add(this.btnAdd);
             this.tabPage1.Controls.Add(this.dtpDayofbirth);
             this.tabPage1.Controls.Add(this.txtEAddress);
             this.tabPage1.Controls.Add(this.label10);
@@ -147,19 +148,21 @@
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnSave
+            // btnAdd
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSave.FlatAppearance.BorderSize = 3;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(550, 341);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(102, 40);
-            this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAdd.FlatAppearance.BorderSize = 3;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Location = new System.Drawing.Point(550, 341);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(102, 40);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "Save";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // dtpDayofbirth
             // 
@@ -313,7 +316,7 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabPage2.Controls.Add(this.btnCancell);
-            this.tabPage2.Controls.Add(this.buttonSave);
+            this.tabPage2.Controls.Add(this.buttonSaveChangePass);
             this.tabPage2.Controls.Add(this.textPassword);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.txtReNewPass);
@@ -343,19 +346,20 @@
             this.btnCancell.Text = "Cancel";
             this.btnCancell.UseVisualStyleBackColor = false;
             // 
-            // buttonSave
+            // buttonSaveChangePass
             // 
-            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.buttonSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonSave.FlatAppearance.BorderSize = 3;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.ForeColor = System.Drawing.Color.Black;
-            this.buttonSave.Location = new System.Drawing.Point(464, 313);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(102, 40);
-            this.buttonSave.TabIndex = 17;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSaveChangePass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.buttonSaveChangePass.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonSaveChangePass.FlatAppearance.BorderSize = 3;
+            this.buttonSaveChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSaveChangePass.ForeColor = System.Drawing.Color.Black;
+            this.buttonSaveChangePass.Location = new System.Drawing.Point(464, 313);
+            this.buttonSaveChangePass.Name = "buttonSaveChangePass";
+            this.buttonSaveChangePass.Size = new System.Drawing.Size(102, 40);
+            this.buttonSaveChangePass.TabIndex = 17;
+            this.buttonSaveChangePass.Text = "Save";
+            this.buttonSaveChangePass.UseVisualStyleBackColor = false;
+            this.buttonSaveChangePass.Click += new System.EventHandler(this.buttonSaveChangePass_Click);
             // 
             // textPassword
             // 
@@ -490,7 +494,7 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtReNewPass;
@@ -500,6 +504,6 @@
         private System.Windows.Forms.TextBox textUserName;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnCancell;
-        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonSaveChangePass;
     }
 }
