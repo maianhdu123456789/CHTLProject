@@ -7,15 +7,16 @@ namespace CHTLProject
 {
     public partial class Customer : Form
     {
+        DBConnect conn = new DBConnect();
         SqlConnection cn = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
-        string str = @"Data Source=LAPTOP-IJQG44F2\SQLEXPRESS;Initial Catalog=ShopApp;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable dt = new DataTable();
         SqlDataReader Dr;
         public Customer()
         {
             InitializeComponent();
+            cn = new SqlConnection(conn.myConnection());
         }
 
         private void Customer_Load(object sender, EventArgs e)
@@ -27,6 +28,14 @@ namespace CHTLProject
                         dgvCategory.Rows[index].Cells["Column3"].Value = cn.GetFieldValues("SELECT customerName from Customer");
                         dgvCategory.Rows[index].Cells["Column4"].Value = cn.GetFieldValues("SELECT customerPhone from Customer");
                         dgvCategory.Rows[index].Cells["Column5"].Value = cn.GetFieldValues("SELECT point from Customer");*/
+            DataTable dt = new DataTable();
+            dt = cn.getTable("SELECT * from Customer");
+            dgvCategory.DataSource = dt;
+        }
+        void LoadCustomer()
+        {
+            DBConnect cn = new DBConnect();
+            cn.myConnection();
             DataTable dt = new DataTable();
             dt = cn.getTable("SELECT * from Customer");
             dgvCategory.DataSource = dt;
@@ -48,7 +57,27 @@ namespace CHTLProject
         }
         private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string colName = dgvCategory.Columns[e.ColumnIndex].Name;
+            if (colName == "Delete") 
+            {
+                cn.Open();
 
+                cmd = new SqlCommand("EXEC pr_XoaKH @CustomerID ", cn);
+                DataGridViewRow row = this.dgvCategory.Rows[e.RowIndex];
+                cmd.Parameters.Add(new SqlParameter("@CustomerID", row.Cells[2].Value.ToString()));
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Order is been successfully deleted!!", "",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cn.Close();
+                //load lai du lieu trong dgvBillOut sau khi xoa
+                LoadCustomer();
+            }
+            if (colName == "Edit")
+            {
+                ModuleCustomer ctm = new ModuleCustomer();
+                ctm.ShowDialog();
+            }
+            cn.Close();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

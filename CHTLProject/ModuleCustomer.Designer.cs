@@ -39,7 +39,7 @@
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCustomerPhone = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -101,6 +101,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -113,6 +114,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblId
             // 
@@ -148,19 +150,19 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Customer Phone";
             // 
-            // textBox1
+            // txtCustomerPhone
             // 
-            this.textBox1.Location = new System.Drawing.Point(258, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(439, 35);
-            this.textBox1.TabIndex = 15;
+            this.txtCustomerPhone.Location = new System.Drawing.Point(258, 129);
+            this.txtCustomerPhone.Name = "txtCustomerPhone";
+            this.txtCustomerPhone.Size = new System.Drawing.Size(439, 35);
+            this.txtCustomerPhone.TabIndex = 15;
             // 
             // ModuleCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 258);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCustomerPhone);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnUpdate);
@@ -194,6 +196,6 @@
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCustomerPhone;
     }
 }

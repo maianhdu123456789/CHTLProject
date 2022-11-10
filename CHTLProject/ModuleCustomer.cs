@@ -32,5 +32,19 @@ namespace CHTLProject
             cn.Close();
             this.Close();
         }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            cn.Open();
+            cm = new SqlCommand("pr_ThemKH @", cn);
+            cm.Parameters.Add(new SqlParameter("CustomerName",txtCategoryName.Text));
+            cm.Parameters.Add(new SqlParameter("customerPhone",txtCustomerPhone.Text));
+            cm.Parameters.Add(new SqlParameter("point", 0));
+        }
+
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
