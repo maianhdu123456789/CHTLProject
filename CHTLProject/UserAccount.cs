@@ -18,7 +18,7 @@ namespace CHTLProject
         DBConnect Db = new DBConnect();
         SqlDataReader Dr;
         string employeeid;
-        public UserAccount()
+        public UserAccount(string employeeid)
         {
             InitializeComponent();
             cn = new SqlConnection(Db.myConnection());
@@ -42,57 +42,38 @@ namespace CHTLProject
             return check;
         }
 
-        private void tabControl1_Click (object sender, EventArgs e)
-        {
-            if ( CheckManager())
-            { }
-            else
-            {
-                MessageBox.Show("You are not alow to do this!!", "",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            cn.Open();
-            if (CheckManager())
-            {
-                if (txtPassword == txtRePassword)
-                {
-                    cm = new SqlCommand("pr_ThemNV @EmployeeName @dayOfBith @employeeAddress @employeePhoneNum @userName @pass_word", cn);
-                    cm.Parameters.Add(new SqlParameter("@EmployeeName", txtEName.Text));
-                    cm.Parameters.Add(new SqlParameter("@dayOfBith", dtpDayofbirth));
-                    cm.Parameters.Add(new SqlParameter("@employeeAddress", txtEAddress.Text));
-                    cm.Parameters.Add(new SqlParameter("@employeePhoneNum", txtEPhone.Text));
-                    cm.Parameters.Add(new SqlParameter("@userName", txtUserName.Text));
-                    cm.Parameters.Add(new SqlParameter("@pass_word", txtPassword.Text));
-                    cm.ExecuteNonQuery();
-                }
-                else
-                {
-                    MessageBox.Show("Password don't match !!", "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                MessageBox.Show("You are not alow to do this!!", "",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void buttonSaveChangePass_Click(object sender, EventArgs e)
-        {
+        /*  private void buttonSave_Click(object sender, EventArgs e)
+          {
+              cn.Open();
+              if (CheckManager())
+              {
+                  if (txtPassword == txtRePassword)
+                  {
+                      cm = new SqlCommand("pr_ThemNV @EmployeeName @dayOfBith @employeeAddress @employeePhoneNum @userName @pass_word", cn);
+                      cm.Parameters.Add(new SqlParameter("@EmployeeName", txtEName.Text));
+                      cm.Parameters.Add(new SqlParameter("@dayOfBith", dtpDayofbirth));
+                      cm.Parameters.Add(new SqlParameter("@employeeAddress", txtEAddress.Text));
+                      cm.Parameters.Add(new SqlParameter("@employeePhoneNum", txtEPhone.Text));
+                      cm.Parameters.Add(new SqlParameter("@userName", txtUserName.Text));
+                      cm.Parameters.Add(new SqlParameter("@pass_word", txtPassword.Text));
+                      cm.ExecuteNonQuery();
+                  }
+                  else
+                  {
+                      MessageBox.Show("Password don't match !!", "",
+                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+                  }
+              }
+              else
+              {
+                  MessageBox.Show("You are not alow to do this!!", "",
+                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+              }
+          }*/
 
 
 
-        }
     }
 }

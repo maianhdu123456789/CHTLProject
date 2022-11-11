@@ -23,11 +23,6 @@ namespace CHTLProject
         {
             DBConnect cn = new DBConnect();
             cn.myConnection();
-            /*            var index = dgvCategory.Rows.Add();
-                        dgvCategory.Rows[index].Cells["Column2"].Value = cn.GetFieldValues("SELECT customerId from Customer") ;
-                        dgvCategory.Rows[index].Cells["Column3"].Value = cn.GetFieldValues("SELECT customerName from Customer");
-                        dgvCategory.Rows[index].Cells["Column4"].Value = cn.GetFieldValues("SELECT customerPhone from Customer");
-                        dgvCategory.Rows[index].Cells["Column5"].Value = cn.GetFieldValues("SELECT point from Customer");*/
             DataTable dt = new DataTable();
             dt = cn.getTable("SELECT * from Customer");
             dgvCategory.DataSource = dt;

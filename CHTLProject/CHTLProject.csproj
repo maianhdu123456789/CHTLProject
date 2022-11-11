@@ -93,6 +93,12 @@
     <Compile Include="EditBill.Designer.cs">
       <DependentUpon>EditBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModuleEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleEmployee.Designer.cs">
+      <DependentUpon>ModuleEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="HoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditBill.resx">
       <DependentUpon>EditBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleEmployee.resx">
+      <DependentUpon>ModuleEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>

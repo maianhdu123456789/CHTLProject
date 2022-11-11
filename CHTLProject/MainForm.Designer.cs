@@ -94,7 +94,7 @@
             this.panelSlide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSlide.Location = new System.Drawing.Point(0, 0);
             this.panelSlide.Name = "panelSlide";
-            this.panelSlide.Size = new System.Drawing.Size(224, 648);
+            this.panelSlide.Size = new System.Drawing.Size(224, 1102);
             this.panelSlide.TabIndex = 0;
             // 
             // btnLogout
@@ -485,7 +485,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(224, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 648);
+            this.panel2.Size = new System.Drawing.Size(10, 1102);
             this.panel2.TabIndex = 1;
             // 
             // panelS
@@ -550,7 +550,7 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(234, 107);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(881, 541);
+            this.panelMain.Size = new System.Drawing.Size(881, 995);
             this.panelMain.TabIndex = 3;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -559,7 +559,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1115, 648);
+            this.ClientSize = new System.Drawing.Size(1115, 1102);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panel2);

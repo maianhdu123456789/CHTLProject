@@ -170,7 +170,7 @@ namespace CHTLProject
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            openChildForm(new UserAccount());
+            openChildForm(new UserAccount("119"));
             hideSubmenu();
         }
 
