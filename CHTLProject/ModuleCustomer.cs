@@ -21,6 +21,7 @@ namespace CHTLProject
         public ModuleCustomer()
         {
             InitializeComponent();
+            cn = new SqlConnection(Dbc.myConnection());
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
