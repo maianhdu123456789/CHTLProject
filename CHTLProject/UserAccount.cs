@@ -41,7 +41,61 @@ namespace CHTLProject
             //tra ve du checkManager cua nhan vien
             return check;
         }
+        private void Employee_Load(object sender, EventArgs e)
+        {
+            DBConnect cn = new DBConnect();
+            cn.myConnection();
+            DataTable dt = new DataTable();
+            dt = cn.getTable("SELECT * from Employee");
+            dgvCategory.DataSource = dt;
+        }
+        private void Load_Employee()
+        {
+            DataTable dt = new DataTable();
+            DBConnect cn = new DBConnect();
+            cn.myConnection();
+            dt = cn.getTable("SELECT * from Employee");
+            dgvCategory.DataSource = dt;
+        }
+        void LoadCustomerSearch()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM Employee WHERE CONCAT (EmployeeID,EmployeeName) LIKE '%" + txtSearch.Text + "%' ", cn);
+            Dr = cm.ExecuteReader();
+            int i = 0;
+            while (Dr.Read())
+            {
+                i++;
+                dgvEmployee.Rows.Add(i, Dr["EmployeeID"].ToString(), Dr["EmployeeName"].ToString());
+            }
+            Dr.Close();
+            cn.Close();// ngat ket noi
+            dgvEmployee.Rows.Clear();
+        }
+        private void dgvEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvCategory.Columns[e.ColumnIndex].Name;
+            if (colName == "DeleteE")
+            {
+                cn.Open();
 
+                cm = new SqlCommand("EXEC pr_XoaKH @CustomerID ", cn);
+                DataGridViewRow row = this.dgvCategory.Rows[e.RowIndex];
+                cm.Parameters.Add(new SqlParameter("@CustomerID", row.Cells[2].Value.ToString()));
+                cm.ExecuteNonQuery();
+                MessageBox.Show("Order is been successfully deleted!!", "",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cn.Close();
+                //load lai du lieu trong dgvBillOut sau khi xoa
+                
+            }
+            if (colName == "EditE")
+            {
+                ModuleCustomer ctm = new ModuleCustomer();
+                ctm.ShowDialog();
+            }
+            cn.Close();
+        }
 
 
         /*  private void buttonSave_Click(object sender, EventArgs e)
