@@ -43,58 +43,112 @@ namespace CHTLProject
         }
         private void Employee_Load(object sender, EventArgs e)
         {
-            DBConnect cn = new DBConnect();
-            cn.myConnection();
-            DataTable dt = new DataTable();
-            dt = cn.getTable("SELECT * from Employee");
-            dgvCategory.DataSource = dt;
+
+            Load_Employee();
         }
         private void Load_Employee()
         {
-            DataTable dt = new DataTable();
-            DBConnect cn = new DBConnect();
-            cn.myConnection();
-            dt = cn.getTable("SELECT * from Employee");
-            dgvCategory.DataSource = dt;
+            dgvEmployee.Rows.Clear();
+            cn.Open();
+            cm = new SqlCommand("SELECT * from Employee",cn);
+            Dr = cm.ExecuteReader();
+            int i = 0;
+            while (Dr.Read())
+            {
+                i++;
+                dgvEmployee.Rows.Add(i, Dr["EmployeeId"].ToString(), Dr["EmployeeName"].ToString(), Dr["employeeAddress"].ToString(), Dr["employeePhoneNum"], Dr["userName"], Dr["pass_word"], Dr["checkManageer"].ToString());
+            }
+            Dr.Close();
+            cn.Close();
+            /*   DataTable dt = new DataTable();
+               DBConnect cnn = new DBConnect();
+               cnn.myConnection();
+               dt = cnn.getTable("SELECT * from Employee");
+               dgvEmployee.DataSource = dt;*/
         }
         void LoadCustomerSearch()
         {
             cn.Open();
+            dgvEmployee.Rows.Clear();
             cm = new SqlCommand("SELECT * FROM Employee WHERE CONCAT (EmployeeID,EmployeeName) LIKE '%" + txtSearch.Text + "%' ", cn);
             Dr = cm.ExecuteReader();
             int i = 0;
             while (Dr.Read())
             {
                 i++;
-                dgvEmployee.Rows.Add(i, Dr["EmployeeID"].ToString(), Dr["EmployeeName"].ToString());
+                dgvEmployee.Rows.Add(i, Dr["EmployeeId"].ToString(), Dr["EmployeeName"].ToString(), Dr["employeeAddress"].ToString(), Dr["employeePhoneNum"], Dr["userName"], Dr["pass_word"], Dr["checkManageer"].ToString());
             }
             Dr.Close();
             cn.Close();// ngat ket noi
-            dgvEmployee.Rows.Clear();
         }
         private void dgvEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string colName = dgvCategory.Columns[e.ColumnIndex].Name;
+            string colName = dgvEmployee.Columns[e.ColumnIndex].Name;
             if (colName == "DeleteE")
             {
                 cn.Open();
 
-                cm = new SqlCommand("EXEC pr_XoaKH @CustomerID ", cn);
-                DataGridViewRow row = this.dgvCategory.Rows[e.RowIndex];
-                cm.Parameters.Add(new SqlParameter("@CustomerID", row.Cells[2].Value.ToString()));
+                cm = new SqlCommand("pr_XoaNV", cn);
+                cm.Parameters.Add(new SqlParameter("@EmployeeID", dgvEmployee[1,e.RowIndex].Value.ToString()));
+                cm.CommandType = CommandType.StoredProcedure;
                 cm.ExecuteNonQuery();
                 MessageBox.Show("Order is been successfully deleted!!", "",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cn.Close();
-                //load lai du lieu trong dgvBillOut sau khi xoa
+                Load_Employee();
                 
             }
             if (colName == "EditE")
             {
-                ModuleCustomer ctm = new ModuleCustomer();
+                int i = 0;
+                ModuleEmployee ctm = new ModuleEmployee();
+                ctm.txtEName.ReadOnly = true;
+                ctm.txtEName.Text = dgvEmployee[2, e.RowIndex].Value.ToString();
+                ctm.txtEAddress.ReadOnly = true;
+                ctm.txtEAddress.Text = dgvEmployee[3, e.RowIndex].Value.ToString();
+               // ctm.dtpDayofbirth.Value.Date = dgvEmployee[3, e.RowIndex].Value;
+                ctm.txtEPhone.ReadOnly = true;
+                ctm.txtEPhone.Text=dgvEmployee[4, e.RowIndex].Value.ToString();
+                ctm.cdRole.Text = (dgvEmployee[7, e.RowIndex].Value.ToString() == "True") ? "Manager" : "Employee";
+                ctm.txtUserName.ReadOnly = true;
+                ctm.txtUserName.Text = dgvEmployee[5, e.RowIndex].Value.ToString();
+                ctm.btnSave.Hide();
                 ctm.ShowDialog();
+
+                Load_Employee();
             }
             cn.Close();
+        }
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search Employee here")
+            {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = Color.Black;
+
+            }
+        }
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Search Employee here";
+                txtSearch.ForeColor = Color.MediumPurple;
+
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadCustomerSearch();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+            ModuleEmployee ctm = new ModuleEmployee();
+            ctm.ShowDialog();
+            Load_Employee();
         }
 
 

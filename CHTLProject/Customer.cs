@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CHTLProject
@@ -82,8 +83,18 @@ namespace CHTLProject
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
             ModuleCustomer ctm = new ModuleCustomer();
             ctm.ShowDialog();
+        }
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search category here")
+            {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = Color.Black;
+
+            }
         }
     }
 }
